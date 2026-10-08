@@ -21,6 +21,7 @@ public class Habilidad {
 	public List<Habilidad> getDesbloqueables(){
 		return this.desbloqueables;
 	}
+	
 	public static int costeRamaCompleta(Habilidad raiz) {
 		if(raiz == null) {
 			return 0;
@@ -28,7 +29,10 @@ public class Habilidad {
 		int coste = raiz.getCoste();
 		
 		if(raiz.getDesbloqueables() != null) {
-		
+			for(Habilidad hab : raiz.getDesbloqueables()) {
+				coste += costeRamaCompleta(hab);
+			}
+		 
 		}
 		
 		return coste;

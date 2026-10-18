@@ -29,5 +29,4 @@ public class TraumaPalindromo {
 		String txtPal = "Anita lava la tina";
 		System.out.println("¿Es este texto palíndromo? " + esPalindromo(txtPal));
 	}
-
 }
